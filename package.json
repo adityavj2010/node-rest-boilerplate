@@ -6,7 +6,8 @@
     "version": "1.0.0",
     "private": false,
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "generate-docs":"documentation build lib/** -f html -o docs"
     },
     "dependencies": {
         "cors": "^2.8.5",
@@ -16,5 +17,8 @@
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.9.7",
         "mongoose-unique-validator": "^2.0.3"
+    },
+    "devDependencies": {
+        "documentation": "^12.3.0"
     }
 }

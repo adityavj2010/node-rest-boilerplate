@@ -5,7 +5,10 @@ const app = express()
 const mongoose = require('mongoose');
 
 const mongoUri = 'mongodb+srv://aditya_cms:qwertyuiop@cluster0-ytf8w.gcp.mongodb.net/test?retryWrites=true&w=majority'
-
+/** 
+ *  Starts the mongoose connnection
+ *  @todo Add variables to env files
+ */
 mongoose.connect(mongoUri,{useNewUrlParser:true,useUnifiedTopology:true});
 mongoose.connection.on('error', () => {
   console.error(`unable to connect to database: ${mongoUri}`);
@@ -16,6 +19,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cors())
 
+/** 
+ *  Adding routes
+ */
 app.use(allRoutes);
 
 app.use("*",(req,res)=>{
